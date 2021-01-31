@@ -139,18 +139,14 @@ def check_buff_user_name(driver):
     else:
         return False, buff_user_name
 
-
 """
-@description: 单体测试
+@description: Buff 登录
 -------
 @param:
 -------
 @return:
 """
-if __name__ == "__main__":
-    # Windows 下需要新建浏览器用以接管
-    # rab_chrome.build_chrome(9999)
-    driver = rab_chrome.get_driver(9999, True, "socks5://127.0.0.1:1080")
+def do_buff_login(driver):
     try:
         driver.get("https://buff.163.com")
         print("Buff 页面打开中...")
@@ -177,9 +173,26 @@ if __name__ == "__main__":
         success_flg, buff_user_name = check_buff_user_name(driver)
         if (success_flg):
             print("Buff 登录成功！登录用户：" + buff_user_name)
+            return True
         else:
             print("Buff 登录失败！登录用户：" + buff_user_name + "，请检查步骤！")
     except Exception as e:
         print(e)
-    finally:
-        driver.quit()
+    return False
+
+
+"""
+@description: 单体测试
+-------
+@param:
+-------
+@return:
+"""
+if __name__ == "__main__":
+    # Windows 下需要新建浏览器用以接管
+    # rab_chrome.build_chrome(9999)
+    driver = rab_chrome.get_driver(9999, True, "socks5://127.0.0.1:1080")
+    # 执行 Buff 登录操作
+    do_buff_login(driver)
+    # 关闭浏览器
+    driver.quit()

@@ -2,5 +2,6 @@ accounts.csv
 *.log
 /__pycache__
 /log
+/rab_log
 /rab_python_packages
 **/__pycache__
