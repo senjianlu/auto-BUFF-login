@@ -6,7 +6,7 @@
 # @DATE: 2021/01/31 周日
 # @TIME: 12:34:09
 #
-# @DESCRIPTION: 测试 Linux 系统下无头浏览器是否可以正常爬取 Buff
+# @DESCRIPTION: 测试 Linux 系统下无头浏览器是否可以正常登录 Buff
 
 
 import csv
